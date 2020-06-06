@@ -14,8 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Lobster&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/movil.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/movil.css">
 
 </head>
 
@@ -67,23 +71,64 @@
     <!-- Seccion de Scroll -->
     <section class="scroll">
         <div class="contenedor">
-            <a href="#" class="btn-scroll-down btn">&darr;</a>
+            <a href="#aboutme" class="btn-scroll-down btn"></a>
         </div>
     </section>
 
-    <!-- Seccion de banner -->
-    <section class="contenedor">
-        <div class="fondo">
-            <div class="fondo2">
-                <div class="about-me"></div>
-                <div class="skills">
-                    <!-- <h1>Skills</h1>
-                    <div class="item-skills">
-                        <p>JavaScript</p>
+    <!-- Seccion de About Me -->
+    <section class="aboutme" id="aboutme">
+        <div class="container">
+            <div class="row">
+                <div class="foto col-md col-lg-6" data-target="#profileOptions" data-toggle="modal">
+                    <img src="img/perfil.jpeg" alt="JG">
+                </div>
+                <div class="bio col-md col-lg-6">
+                    <h1>About Me</h1>
+                    <p>Hola, mi nombre es Jimena Gramajo soy estudiante de
+                        ingeniería apasionada por el diseño y desarrollo web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <p>HTML</p>
-                        <p>CSS</p>
-                    </div> -->
+    <!-- MENU -->
+    <section id="formacion" class="forma-datos">
+        <div class="container">
+            <div class="titulo-seccion">
+                <h2>Formación</h2>
+            </div>
+            <div class="contenedor-forma">
+                <ul id="encabezado_forma" class="encabezado">
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                </ul>
+                <div class="contenido" id="contenido_menu">
+                    <!-- MENU SKILLS -->
+                    <div id="skills">
+                        <div class="item">
+                            <div class="col izq">
+                                <h3>Lorem ipsum dolor sit amet.</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, maiores.</p>
+                            </div>
+                            <div class="col der">
+                                <p class="precio">2020</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MENU CURSOS -->
+                    <div id="cursos">
+                        <div class="item">
+                            <div class="col izq">
+                                <h3>Lorem ipsum dolor asfasdfsit amet.</h3>
+                                <p>Lorem ipsum dolor sit amasfasdfet consectetur, adipisicing elit. Illo, maiores.
+                                </p>
+                            </div>
+                            <div class="col der">
+                                <p class="precio">2017</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -93,8 +138,10 @@
     <section class="contacto">
 
     </section>
+
+    
     <!-- Pie de pagina -->
-    <!-- <footer>
+    <footer>
         <div class="top-footer"></div>
         <div class="center-footer">
             <p>&copy; Todos los derechos reservados</p>
@@ -102,10 +149,12 @@
         <div class="bottom-footer">
 
         </div>
-    </footer> -->
+    </footer>
 
 
-
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
