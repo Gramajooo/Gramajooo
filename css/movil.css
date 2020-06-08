@@ -1,15 +1,4 @@
-/* @media all and (max-width: 458px) {
-    .portada .portada-items{
-        margin-left: 0;
-    }
-    .portada-items h1{
-        margin-left: 0;
-    }
 
-    .portada .portada-items .sub-texto h2{
-        margin-right: 0;
-    }
-} */
 @media all and (max-width: 479px) {
     .portada .portada-items{
         margin-left: 0;
@@ -31,10 +20,14 @@
     }
 }
 
-@media all and (max-width: 769px) {
+@media all and (max-width: 768px) {
    
     .portada .portada-items .sub-texto h2{
         margin-right: 3.956rem;
+    }
+
+    .aboutme .bio {
+        margin-top: -7.256rem;
     }
 }
 
@@ -64,11 +57,9 @@
 
     header .icono {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        align-self: center;
         margin-right: 1.326rem;
-        margin-top: 0.556rem;
-        font-size: 2.256rem;
+        font-size: 1.556rem;
         color: #f24333;
     }
 }

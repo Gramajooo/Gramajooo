@@ -141,6 +141,7 @@ header span {
     background: #0a023b;
     height: 100vh;
     display: flex;
+    padding: 0;
     justify-content: center;
 }
 
