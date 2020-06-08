@@ -8,6 +8,10 @@
         font-size: 4.8rem;
     }
 
+    .portada .portada-items .sub-texto{
+        margin-top: 0.256rem;
+        margin-bottom: 1rem;
+    }
     .portada .portada-items .sub-texto h2{
         margin-right: 0;
     }
