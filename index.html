@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
     <!-- Encabezado -->
     <header>
         <!-- MENU -->
@@ -48,37 +48,34 @@
             </nav>
         </div>
     </header>
-    <!-- <div class="icono">
-                        <i class="fas fa-bars"></i>
-                    </div> -->
+
     <!-- PORTADA -->
     <section class="portada">
-        <div class="contenedor">
-            <div class="portada-items">
-                <!-- <div class="avatar">
-                    <img src="img/perfil.jpeg" alt="Jimena Gramajo">
-                </div> -->
-                <div class="titulo-texto">
+        <div class="container">
+            <div class="portada-items row">
+                <div class="titulo-texto col col-lg-6">
                     <h1>&nbsp;&nbsp;&nbsp;Jimena A.<br>Gramajo</h1>
                 </div>
-                <div class="sub-texto">
+            </div>
+            <div class="portada-items row">
+                <div class="sub-texto col col-lg-6">
                     <h2>Diseño y <br>desarrollo web</h2>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Seccion de Scroll -->
-    <section class="scroll">
-        <div class="contenedor">
-            <a href="#aboutme" class="btn-scroll-down btn"></a>
+            <!-- Seccion de Scroll -->
+            <div class="scroll row">
+                <div class="col">
+                    <a href="#aboutme" class="btn-scroll-down btn"></a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Seccion de About Me -->
     <section class="aboutme" id="aboutme">
         <div class="container">
-            <div class="row">
+            <div class="aboutme-items row">
                 <div class="foto col-md col-lg-6" data-target="#profileOptions" data-toggle="modal">
                     <img src="img/perfil.jpeg" alt="JG">
                 </div>
@@ -139,7 +136,7 @@
 
     </section>
 
-    
+
     <!-- Pie de pagina -->
     <footer>
         <div class="top-footer"></div>

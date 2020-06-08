@@ -66,89 +66,57 @@ header span {
 
 .portada {
     width: 100%;
-    height: 81vh;
-    margin: auto;
-    background-color: white;
-}
-
-.contenedor {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin: auto;
-}
-
-.portada-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: left;
+    height: 90vh;
     background-image: url('../img/setup.gif');
     background-repeat: no-repeat;
     background-position: cover;
     background-position: right;
+
+    display: flex;
+    justify-content: center;
+}
+
+.portada-items {
+    align-items: center;
+    padding-top: 4.656rem;
 }
 
 .portada-items .titulo-texto {
-    margin-top: 7.256rem;
-    margin-left: 10%;
+    align-self: flex-start;
+    margin-top: 5.556rem;
 }
 
 .portada-items h1 {
-    color: #0a023b;
+    margin-left: 2.256rem;
+    color: #f24333;
     font-family: 'Lobster', cursive;
-    font-size: 6.265rem;
+    font-size: 5.265rem;
     text-shadow: 6px 8px 6px #011627;
 }
 
 .portada-items .sub-texto {
+    align-self: flex-end;
+    text-align: right;
+}
+
+.portada-items .sub-texto h2 {
     color: #0a023b;
     font-family: 'Architects Daughter';
     font-weight: bold;
-    align-self: flex-end;
-    margin-left: 10%;
-    margin-bottom: 1.256rem;
-}
-
-.avatar {
-    width: 150px;
-    height: 150px;
-    margin-top: 0.256rem;
-    margin-left: -10.256rem;
-    padding: 1.656rem;
-    position: absolute;
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 5.256rem;
 }
 
 
 /* ------------------------ SCROLL ---------------------- */
 
 .scroll {
-    width: 100%;
-    height: 40px;
-    margin-top: -35px;
-    margin-bottom: 40px;
-}
-
-.scroll .contenedor {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    margin-top: -0.756rem;
 }
 
 .scroll a {
     text-decoration: none;
-}
-
-.btn-scroll-down {
-    padding: 2px;
 }
 
 .btn-scroll-down:before {
@@ -163,14 +131,22 @@ header span {
     animation-name: scrollDown;
     animation-duration: 5s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
 }
 
 /* ------------------------ ABOUT ME ---------------------- */
-.aboutme{
-    background: #0a023b; 
-    height: 90vh;
-    padding: 10% 0;
+
+.aboutme {
+    width: 100%;
+    background: #0a023b;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutme-items {
+    height: 100%;
+    align-items: center;
 }
 
 .aboutme .foto {
@@ -185,11 +161,13 @@ header span {
     object-position: center;
     border-radius: 50%;
 }
-.aboutme .bio{
-    margin-top: 3.256rem;
+
+.aboutme .bio {
+    align-self: center;
     color: rgba(237, 242, 239, 0.7);
 }
-.aboutme .bio p{
+
+.aboutme .bio p {
     letter-spacing: 4px;
     text-align: justify;
 }
