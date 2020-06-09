@@ -66,31 +66,47 @@ header span {
 
 .portada {
     width: 100%;
-    height: 90vh;
-    background-image: url('../img/setup.gif');
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-position: right;
-
+    padding: 10px 0;
+    max-height: 100vh;
+    background: white;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .portada-items {
     align-items: center;
-    padding-top: 4.656rem;
 }
 
-.portada-items .titulo-texto {
-    align-self: flex-start;
-    margin-top: 5.556rem;
+.portada-items .foto {
+    display: flex;
+    justify-content: center;
 }
 
-.portada-items h1 {
-    margin-left: 2.256rem;
+.portada-items .foto img {
+    width: 95%;
+}
+
+.name {
+    width: 100%;
+}
+
+.name .name-texto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.name .titulo-texto {
+    text-align: center;
+}
+
+.name h1 {
     color: #f24333;
     font-family: 'Lobster', cursive;
-    font-size: 5.265rem;
+    font-size: 4.156rem;
     text-shadow: 6px 8px 6px #011627;
 }
 
@@ -104,7 +120,6 @@ header span {
     font-family: 'Architects Daughter';
     font-weight: bold;
     font-size: 20px;
-    margin-right: 5.256rem;
 }
 
 
@@ -112,7 +127,7 @@ header span {
 
 .scroll {
     text-align: center;
-    margin-top: -0.756rem;
+    margin-top: -3.756rem;
 }
 
 .scroll a {
