@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Poppins" rel="stylesheet">
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Lobster&display=swap"
@@ -16,6 +18,9 @@
 
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/all.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -24,139 +29,231 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
-    <!-- Encabezado -->
-    <header>
-        <!-- MENU -->
-        <span>Gramajooo</span>
-        <nav class="menu">
-            <a href="#">Inicio</a>
-            <a href="#">About me</a>
-            <a href="#">Formación</a>
-            <a href="#">Potafolio</a>
-            <a href="#">Contacto</a>
-        </nav>
-        <div class="icono">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="contenedor-movil">
-            <nav class="menu-movil">
-                <a href="#">Inicio</a>
-                <a href="#">About me</a>
-                <a href="#">Formación</a>
-                <a href="#">Potafolio</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- PORTADA -->
-    <section class="portada">
-        <div class="container">
-            <div class="portada-items row">
-                <div class="foto col-lg col-xl-6">
-                    <img src="img/setup.gif" alt="makeweb">
+    <div id="content">
+        <div class="home">
+            <!-- Encabezado -->
+            <header>
+                <!-- MENU -->
+                <span>Gramajooo</span>
+                <nav class="menu">
+                    <a href="#">Inicio</a>
+                    <a href="#aboutme">About me</a>
+                    <a href="#formacion">Formación</a>
+                    <a href="#">Potafolio</a>
+                    <a href="#">Contacto</a>
+                </nav>
+                <div class="icono">
+                    <i class="fas fa-bars"></i>
                 </div>
-                <div class="name col-lg col-xl-6">
-                    <div class="name-texto">
-                        <div class="titulo-texto">
-                            <h1>Jimena A.&nbsp;<br>Gramajo</h1>
+                <div class="contenedor-movil">
+                    <nav class="menu-movil">
+                        <a href="#">Inicio</a>
+                        <a href="#">About me</a>
+                        <a href="#">Formación</a>
+                        <a href="#">Potafolio</a>
+                        <a href="#">Contacto</a>
+                    </nav>
+                </div>
+            </header>
+            <!-- PORTADA -->
+            <section class="portada">
+                <div class="container">
+                    <div class="portada-items row">
+                        <div class="titulo-texto col">
+                            <h1>Jimena A.&nbsp;&nbsp;&nbsp;<br>Gramajo</h1>
                         </div>
-                        <div class="sub-texto">
+                    </div>
+                    <div class="portada-items row">
+                        <div class="sub-texto col">
                             <h2>Diseño y <br>desarrollo web</h2>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Seccion de Scroll -->
-            <div class="scroll row">
-                <div class="col">
-                    <a href="#aboutme" class="btn-scroll-down btn"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seccion de About Me -->
-    <section class="aboutme" id="aboutme">
-        <div class="container">
-            <div class="aboutme-items row">
-                <div class="foto col-md col-lg-6" data-target="#profileOptions" data-toggle="modal">
-                    <img src="img/perfil.jpeg" alt="JG">
-                </div>
-                <div class="bio col-md col-lg-6">
-                    <h1>About Me</h1>
-                    <p>Hola, mi nombre es Jimena Gramajo soy estudiante de
-                        ingeniería apasionada por el diseño y desarrollo web.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MENU -->
-    <section id="formacion" class="forma-datos">
-        <div class="container">
-            <div class="titulo-seccion">
-                <h2>Formación</h2>
-            </div>
-            <div class="contenedor-forma">
-                <ul id="encabezado_forma" class="encabezado">
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#cursos">Cursos</a></li>
-                </ul>
-                <div class="contenido" id="contenido_menu">
-                    <!-- MENU SKILLS -->
-                    <div id="skills">
-                        <div class="item">
-                            <div class="col izq">
-                                <h3>Lorem ipsum dolor sit amet.</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, maiores.</p>
-                            </div>
-                            <div class="col der">
-                                <p class="precio">2020</p>
-                            </div>
+                    <!-- Seccion de Scroll -->
+                    <div class="scroll row">
+                        <div class="col">
+                            <a href="#aboutme" class="btn-scroll-down btn"></a>
                         </div>
                     </div>
-                    <!-- MENU CURSOS -->
-                    <div id="cursos">
-                        <div class="item">
-                            <div class="col izq">
-                                <h3>Lorem ipsum dolor asfasdfsit amet.</h3>
-                                <p>Lorem ipsum dolor sit amasfasdfet consectetur, adipisicing elit. Illo, maiores.
-                                </p>
-                            </div>
-                            <div class="col der">
-                                <p class="precio">2017</p>
-                            </div>
-                        </div>
+                </div>
+            </section>
+        </div>
+        <!-- Seccion de About Me -->
+        <section class="aboutme" id="aboutme">
+            <div class="container">
+                <div class="aboutme-items row">
+                    <div class="foto col-md col-lg-6" data-target="#profileOptions" data-toggle="modal">
+                        <img src="img/perfil.jpeg" alt="JG">
                     </div>
-
+                    <div class="bio col-md col-lg-6">
+                        <h1>About Me</h1>
+                        <p>Hola, mi nombre es Jimena Gramajo soy estudiante de
+                            ingeniería apasionada por el diseño y desarrollo web.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seccion de Contacto -->
-    <section class="contacto">
+        <!-- Seccion Formacion -->
+        <section id="formacion" class="forma-datos">
+            <div class="container">
+                <div class="titulo-seccion">
+                    <h2>Formación</h2>
+                </div>
+                <div class="contenedor-forma">
+                    <ul id="encabezado_forma" class="encabezado">
+                        <li><a href="#educacion">Educación</a></li>
+                        <li><a href="#expe">Experiencia</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#cursos">Cursos Extra</a></li>
+                    </ul>
+                    <div class="contenido" id="contenido_forma">
+                        <!-- MENU EDUCACIÓN -->
+                        <div id="educacion">
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i> </div>
+                                    <div class="descrip">
+                                        <h3>Ingeniería en Ciencias y Sistemas | 5to semestre</h3>
+                                        <p>UNIVERSIDAD DE SAN CARLOS DE GUATEMALA</p>
+                                        <p>2015 - Actualmente</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i> </div>
+                                    <div class="descrip">
+                                        <h3>Barchiller en Computación</h3>
+                                        <p>COLEGIO CED - IECA</p>
+                                        <p>2012 - 2013</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MENU EXPERIENCIA -->
+                        <div id="expe">
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i>
+                                    </div>
+                                    <div class="descrip">
+                                        <h3>En busca de mi primera oportunidad! :)</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MENU SKILLS -->
+                        <div id="skills">
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i> </div>
+                                    <div class="descrip">
+                                        <h3>Ingeniería en Ciencias y Sistemas | 5to semestre</h3>
+                                        <p>UNIVERSIDAD DE SAN CARLOS DE GUATEMALA</p>
+                                        <p>2015 - Actualmente</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MENU CURSOS -->
+                        <div id="cursos">
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i>
+                                    </div>
+                                    <div class="descrip">
+                                        <h3>Fundamentos de JavaScript</h3>
+                                        <p>CREHANA.COM</p>
+                                        <p>Mayo 2020</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i>
+                                    </div>
+                                    <div class="descrip">
+                                        <h3>Git y GitHub: Control de versiones en Proyectos Web</h3>
+                                        <p>CREHANA.COM</p>
+                                        <p>Abril 2020</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i>
+                                    </div>
+                                    <div class="descrip">
+                                        <h3>Introducción al Desarrollo Web Front-End: HTML y CSS</h3>
+                                        <p>CREHANA.COM</p>
+                                        <p>Abril 2020</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i>
+                                    </div>
+                                    <div class="descrip">
+                                        <h3>Desarrollo de Aplicaciones Móviles para Android</h3>
+                                        <p>INTECAP | CENTRO TICS</p>
+                                        <p>Marzo a Junio - 2019</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="vineta">
+                                        <i class="fab fa-battle-net"></i>
+                                    </div>
+                                    <div class="descrip">
+                                        <h3>Desarrollo de Aplicaciones para la Web con ASP.NET</h3>
+                                        <p>INTECAP | CENTRO TICS</p>
+                                        <p>Febrero a Septiembre - 2014</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion de Contacto -->
+        <section class="contacto">
+
+        </section>
 
 
-    <!-- Pie de pagina -->
-    <footer>
-        <div class="top-footer"></div>
-        <div class="center-footer">
-            <p>&copy; Todos los derechos reservados</p>
-        </div>
-        <div class="bottom-footer">
+        <!-- Pie de pagina -->
+        <footer>
+            <div class="top-footer"></div>
+            <div class="center-footer">
+                <p>&copy; Todos los derechos reservados</p>
+            </div>
+            <div class="bottom-footer">
 
-        </div>
-    </footer>
-
+            </div>
+        </footer>
+    </div>
 
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/tabs.js"></script>
+
 </body>
 
 </html>

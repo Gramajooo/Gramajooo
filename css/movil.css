@@ -1,17 +1,4 @@
 
-@media all and (max-width: 1200px) {
-    
-    .portada-items .foto img{
-        width: 500px;
-    }
-}
-
-@media all and (max-width: 992px) {
-    
-    .portada-items .foto img{
-        width: 290px;
-    }
-}
 
 @media all and (max-width: 768px) {
     
