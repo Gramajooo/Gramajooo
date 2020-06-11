@@ -3,9 +3,18 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.progress {
+  padding: 0;
+  margin: 0;
+}
+.category {
+  padding: 0;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
 .forma-datos {
   padding: 4.625rem 0;
-  background: #edf2ef;
+  background: white;
 }
 .forma-datos .container .titulo-seccion h2 {
   font-family: 'Poppins', serif;
@@ -23,7 +32,12 @@
   text-transform: uppercase;
   list-style: none;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+}
+.forma-datos .container .contenedor-forma .encabezado li {
+  margin-top: 1.25rem;
 }
 .forma-datos .container .contenedor-forma .encabezado li a {
   font-size: 0.985rem;
@@ -49,8 +63,9 @@
   max-width: 90rem;
   margin: 0 auto;
   margin-top: 2.5rem;
-  border: 6px double #777777;
+  border: 3px solid rgba(119, 119, 119, 0.5);
   padding: 1.25rem 2.25rem;
+  background: rgba(237, 242, 239, 0.3);
 }
 .forma-datos .container .contenedor-forma .contenido > div {
   display: none;

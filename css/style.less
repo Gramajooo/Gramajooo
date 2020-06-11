@@ -8,7 +8,7 @@
 // FUENTES
 @fuente-secundaria: 'Poppins', serif;
 
-// ESTILOS GENERALES
+// ------------------------ ESTILOS GENERALES --------------------
 
 * {
     -webkit-box-sizing: border-box;
@@ -16,9 +16,24 @@
     box-sizing: border-box;
 }
 
+
+.progress {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category {
+    padding: 0;
+    margin: 10px 0 0 0;
+    font-weight: bold;
+  }
+
+// ------------------------ FORMACION ---------------------------
+
+// ESTILO GENERAL
 .forma-datos {
     padding: 4.625rem 0;
-    background: @gris-claro;
+    background: white;
 
     .container {
 
@@ -42,9 +57,12 @@
                 text-transform: uppercase;
                 list-style: none;
                 display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: center;
 
                 li {
+                    margin-top: 1.25rem;
 
                     a {
                         font-size: 0.985rem;
@@ -78,8 +96,9 @@
                 max-width: 90rem;
                 margin: 0 auto;
                 margin-top: 2.5rem;
-                border: 6px double @texto-claro;
+                border: 3px solid fade(@texto-claro, 50%);
                 padding: 1.25rem 2.25rem;
+                background: fade(@gris-claro, 30%);
 
                 >div {
                     display: none;
