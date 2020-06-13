@@ -31,29 +31,35 @@
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
 
     <div id="content">
+        <!-- Seccion de Encabezado -->
         <div class="home">
-            <!-- Encabezado -->
             <header>
-                <!-- MENU -->
-                <span>Gramajooo</span>
-                <nav class="menu">
-                    <a href="#">Inicio</a>
-                    <a href="#aboutme">About me</a>
-                    <a href="#formacion">Formación</a>
-                    <a href="#">Potafolio</a>
-                    <a href="#">Contacto</a>
-                </nav>
-                <div class="icono">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="contenedor-movil">
-                    <nav class="menu-movil">
+                <!-- MENU PRINCIPAL -->
+                <div class="menu-pc">
+                    <span>Gramajooo</span>
+                    <nav class="menu">
                         <a href="#">Inicio</a>
-                        <a href="#">About me</a>
-                        <a href="#">Formación</a>
-                        <a href="#">Potafolio</a>
-                        <a href="#">Contacto</a>
+                        <a href="#aboutme">About me</a>
+                        <a href="#formacion">Formación</a>
+                        <a href="#portafolio">Potafolio</a>
+                        <a href="#contacto">Contacto</a>
                     </nav>
+                </div>
+                <!-- MENU MOVIL-->
+                <div class="menu-movil">
+                    <span>Gramajooo</span>
+                    <div class="burger-menu" id="burger_menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div id="slideMenu" class="slideMenu">
+                        <nav class="menu">
+                            <a href="#">Inicio</a>
+                            <a href="#aboutme">About me</a>
+                            <a href="#formacion">Formación</a>
+                            <a href="#portafolio">Potafolio</a>
+                            <a href="#contacto">Contacto</a>
+                        </nav>
+                    </div>
                 </div>
             </header>
             <!-- PORTADA -->
@@ -148,7 +154,8 @@
                             </div>
                         </div>
                         <!-- MENU SKILLS -->
-                        <div id="skills" class="hab">
+                        <div id="skills">
+                            <!-- TECNOLOGIAS -->
                             <div class="item">
                                 <div class="row">
                                     <div class="vineta">
@@ -159,6 +166,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- COL1 -->
                             <div class="row">
                                 <div class="col-md col-lg-6">
                                     <p class="category">HTML</p>
@@ -179,7 +187,7 @@
                                             role="progressbar" style="width: 10%; background-color: #F7DF1E"
                                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
                                     </div>
-                                    <p class="category">jQuery</p>
+                                    <p class="category">JQuery</p>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-striped progress-bar-animated"
                                             role="progressbar" style="width: 5%; background-color: #111A27"
@@ -204,7 +212,7 @@
                                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">5%</div>
                                     </div>
                                 </div>
-
+                                <!-- COL2 -->
                                 <div class="col-md col-lg-6">
                                     <p class="category">Java</p>
                                     <div class="progress">
@@ -238,6 +246,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- DESARROLLO Y HERRAMIENTAS -->
                             <div class="item">
                                 <div class="row">
                                     <div class="vineta">
@@ -248,6 +257,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- COL1 -->
                             <div class="row">
                                 <div class="col-md col-lg-6">
                                     <p class="category">Git y GitHub</p>
@@ -340,35 +350,139 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seccion de Contacto -->
-        <section class="contacto">
+        <!-- Seccion de Portafolio -->
+        <section id="portafolio" class="portafolio">
+            <div class="container-porta container">
+                <h2 class="titulo-seccion">Portafolio</h2>
+                <div class="row-porta row">
 
+                    <div class="porta-card card">
+                        <img src="img/projectChef.PNG" class="card-img-top">
+                        <div class="porta-card-overlay">
+                            <p class="h4">Chef</p>
+                            <span class="badge" style="background-color: #F64803">HTML5</span>
+                            <span class="badge" style="background-color: #2277FF">CSS3</span>
+                            <span class="badge" style="background-color: #ffc107">JavaScript</span>
+                            <span class="badge" style="background-color: #1D365D">Less</span>
+                            <div class="links-github mt-3">
+                                <span><a class="link-github mr-2" href="https://github.com/Gramajooo/ProjectJs"
+                                        target="_blank"></a></span>
+                                <span><a class="link-web ml-2" href="https://gramajooo.github.io/ProjectJs/"
+                                        target="_blank"></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="porta-card card">
+                        <img src="img/projectAmaz.PNG" class="card-img-top">
+                        <div class="porta-card-overlay">
+                            <p class="h4">Amaz</p>
+                            <span class="badge" style="background-color: #F64803">HTML5</span>
+                            <span class="badge" style="background-color: #2277FF">CSS3</span>
+                            <div class="links-github mt-3">
+                                <span><a class="link-github mr-2" href="#" target="_blank"></a></span>
+                                <span><a class="link-web ml-2" href="#" target="_blank"></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="porta-card card">
+                        <img src="img/projectFood.PNG" class="card-img-top">
+                        <div class="porta-card-overlay">
+                            <p class="h4">Store Food Movil</p>
+                            <span class="badge" style="background-color: #F64803">HTML5</span>
+                            <span class="badge" style="background-color: #2277FF">CSS3</span>
+                            <span class="badge" style="background-color: #5C3D87">Boostrap</span>
+                            <span class="badge" style="background-color: #C66395">Sass</span>
+                            <div class="links-github mt-3">
+                                <span><a class="link-github mr-2" href="https://github.com/Gramajooo/ProjectGit"
+                                        target="_blank"></a></span>
+                                <span><a class="link-web ml-2" href="https://gramajooo.github.io/ProjectGit/"
+                                        target="_blank"></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="porta-card card">
+                        <img src="img/projectJG.PNG" class="card-img-top">
+                        <div class="porta-card-overlay">
+                            <p class="h4">Store Food Movil</p>
+                            <span class="badge" style="background-color: #F64803">HTML5</span>
+                            <span class="badge" style="background-color: #2277FF">CSS3</span>
+                            <span class="badge" style="background-color: #5C3D87">Boostrap</span>
+                            <span class="badge" style="background-color: #ffc107">JavaScript</span>
+                            <span class="badge" style="background-color: #1D365D">Less</span>
+                            <div class="links-github mt-3">
+                                <span><a class="link-github mr-2" href="https://github.com/Gramajooo/Gramajooo"
+                                        target="_blank"></a></span>
+                                <span><a class="link-web ml-2" href="https://gramajooo.github.io/Gramajooo/"
+                                        target="_blank"></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
+        <!-- Seccion de Contacto -->
+        <section id="contacto" class="contacto">
+            <h2 class="titulo-seccion">Contacto</h2>
+            <div class="formulario">
+                <form action="" class="formulario_contacto" name="formulario_contacto">
+                    <div class="input-group">
+                        <input type="text" id="nombre" name="nombre">
+                        <label for="nombre" class="label">Nombre</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="email" name="email">
+                        <label for="email" class="label">Correo electrónico</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="mensaje" id="mensaje"></textarea>
+                        <label for="mensaje" class="label">Mensaje</label>
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </section>
 
         <!-- Pie de pagina -->
         <footer>
-            <div class="top-footer"></div>
-            <div class="center-footer">
-                <p>&copy; Todos los derechos reservados</p>
+            <div class="footer-top">
+                <p class="copyright">&copy; Todos los derechos reservados</p>
+                <!-- <a class="stories" href="https://stories.freepik.com/">Images by stories.freepik.com</a> -->
             </div>
-            <div class="bottom-footer">
-
+            <div class="bottom-redes">
+                <a href="https://twitter.com/Srta_Ozera_" target="_blank">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+                <a href="https://github.com/Gramajooo" target="_blank">
+                    <i class="fab fa-github-square"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jimena-gramajo-3b50321a3" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </footer>
     </div>
+
+    <!-- ESTILOS EXTRA -->
 
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- ANIMACIONES JS -->
+
     <script src="js/tabs.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/menuMovil.js"></script>
 
 </body>
 

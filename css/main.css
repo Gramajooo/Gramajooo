@@ -8,6 +8,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 /* -------------- CABECERA -------------- */
 
@@ -23,7 +27,21 @@ header {
     justify-content: space-between;
 }
 
-header span {
+.menu-pc {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-pc span {
+    font-family: 'Lobster', cursive;
+    font-size: 37px;
+    padding: 0.126rem 1.526rem;
+    /* color: rgba(237, 242, 239, 0.87); */
+    color: rgba(1, 22, 39, 0.7);
+}
+
+.menu-movil span {
     font-family: 'Lobster', cursive;
     font-size: 37px;
     padding: 0.126rem 1.526rem;
@@ -35,7 +53,6 @@ header span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-right: 1.326rem;
 }
 
 .menu a {
@@ -51,14 +68,18 @@ header span {
     color: #edf2ef;
 }
 
-/* MENU MOVIL */
-
-.icono {
+.menu-movil {
+    width: 100%;
     display: none;
+    justify-content: space-between;
 }
-
-.contenedor-movil {
-    display: none;
+.burger-menu {
+    display: flex;
+    align-self: center;
+    margin-right: 1.326rem;
+    font-size: 1.556rem;
+    color: #edf2ef;
+    cursor: pointer;
 }
 
 #content {
@@ -157,7 +178,7 @@ header span {
 
 .aboutme {
     width: 100%;
-    background: #191919;
+    background: #1e1e24;
     height: 100vh;
     display: flex;
     padding: 0;
@@ -191,3 +212,111 @@ header span {
     letter-spacing: 4px;
     text-align: justify;
 }
+
+/* -------------------------- FORMACION (HECHA EN LESS) ------------------ */
+
+
+
+/* -------------------------- PORTAFOLIO ------------------ */
+
+.portafolio {
+    min-height: 100vh;
+    margin-bottom: 4.256rem;
+}
+
+.container-porta {
+    position: relative;
+    padding: 2.25rem 1.25rem;
+    background: rgba(237, 242, 239, 0.7);
+}
+
+.row-porta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.porta-card {
+    margin: 1rem;
+    background: transparent;
+    width: 300px;
+    height: 143px;
+}
+
+.titulo-seccion {
+    font-family: 'Poppins', serif;
+    text-align: center;
+    font-weight: 900;
+    font-size: 56px;
+}
+
+.porta-card-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 20px;
+    text-align: center;
+    opacity: 0;
+    color: #edf2ef;
+    background-color: rgba(97, 95, 133, 0.6);
+    transition: 0.5s;
+}
+
+.porta-card-overlay:hover {
+    opacity: 1;
+}
+
+.porta-card-overlay p {
+    font-weight: bold;
+}
+
+.link-github:hover,
+.link-web:hover {
+    text-decoration: none;
+}
+
+.link-github:before,
+.link-web:before {
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.link-github:before {
+    content: "\e905";
+    font-family: "Porfolio";
+}
+
+.link-web:before {
+    content: "\e90a";
+    font-family: "Porfolio";
+}
+
+.link-github:hover:before,
+.link-web:hover:before {
+    color: #1e1e24;
+}
+
+
+/* --------------------------- CONTACTO -------------------------- */
+
+.contacto {
+    position: relative;
+    width: 100%;
+    height: 110vh;
+    background: #f24333;
+}
+
+.contacto:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 110vh;
+    border-bottom: 701px solid #1e1e24;
+    border-right: 800px solid transparent;
+}
+
+/* -------------------------- CONTACTO (UNA PARTE HECHA EN LESS) ------------------ */
+/* -------------------------- FOOTER (HECHA EN LESS) ------------------ */

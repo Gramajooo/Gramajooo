@@ -1,23 +1,16 @@
-
-
 @media all and (max-width: 768px) {
-    
-    .aboutme .bio{
+
+    .aboutme .bio {
         margin-top: -5.256rem;
     }
 }
 
 @media all and (max-width: 1011px) {
 
-    header .menu {
+    .menu-pc {
         display: none;
     }
-
-    header .icono {
+    .menu-movil {
         display: flex;
-        align-self: center;
-        margin-right: 1.326rem;
-        font-size: 1.556rem;
-        color: #f24333;
     }
 }
