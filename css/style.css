@@ -219,7 +219,7 @@
   font-family: 'Poppins', serif;
   font-size: 0.875rem;
 }
-.contacto .formulario .formulario_contacto input[type="submit"] {
+.contacto .formulario .formulario_contacto input[type="button"] {
   font-family: 'Poppins', serif;
   background: #f24333;
   color: white;
@@ -230,7 +230,7 @@
   margin: 0 auto;
   margin-top: 3.125rem;
   padding: 0.9375rem;
-  width: 40%;
+  width: 100%;
   outline: none;
   -webkit-transition: all .3s ease;
   -moz-transition: all .3s ease;
@@ -238,7 +238,7 @@
   -o-transition: all .3s ease;
   transition: all .3s ease;
 }
-.contacto .formulario .formulario_contacto input[type="submit"]:hover {
+.contacto .formulario .formulario_contacto input[type="button"]:hover {
   background: #070708;
 }
 footer {
