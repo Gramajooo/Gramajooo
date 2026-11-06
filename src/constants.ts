@@ -15,16 +15,8 @@ export interface Project {
   description: string;
   image: string;
   tags: { name: string; color: string }[];
-  github: string; // Deja vacío ("") para que aparezca como "Próximamente"
-  demo: string;   // Deja vacío ("") para que aparezca como "Próximamente"
-}
-
-export interface EducationItem {
-  title: string;
-  subtitle?: string;
-  org: string;
-  period: string;
-  icon: string;
+  github: string;
+  demo: string;
 }
 
 export interface CourseItem {
@@ -35,7 +27,7 @@ export interface CourseItem {
 
 export interface SkillItem {
   name: string;
-  pct: number;
+  icon: string;
   color: string;
 }
 
@@ -60,20 +52,20 @@ export const PERSONAL_INFO = {
   firstName: 'Jimena',
   lastName: 'Gramajo',
   brandName: 'Gramajooo',
-  role: 'Diseño & Desarrollo Web',
+  role: 'Desarrolladora Frontend',
   location: 'Guatemala',
   career: 'Ingeniería en Ciencias y Sistemas',
   careerSemester: '5to semestre',
   university: 'Universidad de San Carlos de Guatemala',
   universityShort: 'USAC',
   school: 'Colegio CED - IECA',
-  email: 'jiimenagramajo@gmail.com',
+  email: 'gramajooo.dev@gmail.com',
   languages: 'Español',
-  statusBadge: 'Open to work',
+  statusBadge: 'Disponible para trabajar',
   bioShort:
-    'Estudiante de Ingeniería en Ciencias y Sistemas, apasionada por crear experiencias digitales únicas combinando código limpio con diseño atractivo.',
+    'Desarrolladora Frontend con 4 años de experiencia construyendo aplicaciones web con React y TypeScript, dashboards, tablas de datos y componentes centrados en UX.',
   bioAbout:
-    'Hola 👋 Mi nombre es Jimena Gramajo, soy estudiante de Ingeniería en Ciencias y Sistemas en la Universidad de San Carlos de Guatemala. Me apasiona el diseño y el desarrollo web. Disfruto construir interfaces atractivas y funcionales, siempre buscando aprender nuevas tecnologías y mejores prácticas para crecer como desarrolladora.',
+    'Desarrolladora Frontend con 4 años de experiencia construyendo aplicaciones web con React con TypeScript. Experiencia en desarrollo de funcionalidades administrativas, dashboards, tablas de datos, formularios y componentes orientados a mejorar la experiencia de usuario. Con conocimientos complementarios de Next.js y diseño UI/UX con Figma.',
 } as const;
 
 // -------------------------------------------------------------
@@ -88,7 +80,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 // -------------------------------------------------------------
-// Redes Sociales
+// Redes Sociales (sin Twitter)
 // -------------------------------------------------------------
 export const SOCIAL_LINKS: Record<string, SocialLink> = {
   github: {
@@ -103,214 +95,109 @@ export const SOCIAL_LINKS: Record<string, SocialLink> = {
     icon: 'fab fa-linkedin-in',
     username: 'Jimena Gramajo',
   },
-  twitter: {
-    name: 'Twitter',
-    url: 'https://twitter.com/Srta_Ozera_',
-    icon: 'fab fa-twitter',
-    username: '@Srta_Ozera_',
-  },
 };
 
 // -------------------------------------------------------------
 // Tarjetas de Estadísticas (Sección About)
 // -------------------------------------------------------------
 export const ABOUT_STATS = [
-  { value: '+6', label: 'Proyectos web', highlight: true },
-  { value: 'USAC', label: 'Ingeniería en Sistemas', highlight: false },
+  { value: '4+', label: 'Años de experiencia', highlight: true },
 ];
 
 export const ABOUT_DETAILS = [
   { icon: 'fas fa-map-marker-alt', label: 'Ubicación', value: PERSONAL_INFO.location },
-  { icon: 'fas fa-graduation-cap', label: 'Carrera', value: 'Ing. en Sistemas' },
+  { icon: 'fas fa-laptop-code', label: 'Especialidad', value: 'React & TypeScript' },
   { icon: 'fas fa-envelope', label: 'Email', value: PERSONAL_INFO.email },
   { icon: 'fas fa-language', label: 'Idiomas', value: PERSONAL_INFO.languages },
 ];
 
 // -------------------------------------------------------------
-// Formación: Tabs
+// Formación: Tabs (sin Educación)
 // -------------------------------------------------------------
 export const FORMACION_TABS = [
-  { id: 'educacion', label: 'Educación', icon: 'fas fa-graduation-cap' },
   { id: 'experiencia', label: 'Experiencia', icon: 'fas fa-briefcase' },
-  { id: 'skills', label: 'Skills', icon: 'fas fa-code' },
-  { id: 'cursos', label: 'Cursos', icon: 'fas fa-certificate' },
+  { id: 'skills', label: 'Habilidades Técnicas', icon: 'fas fa-code' },
+  { id: 'cursos', label: 'Formación Complementaria', icon: 'fas fa-certificate' },
 ] as const;
-
-// -------------------------------------------------------------
-// Educación
-// -------------------------------------------------------------
-export const EDUCACION: EducationItem[] = [
-  {
-    title: 'Ingeniería en Ciencias y Sistemas',
-    subtitle: '5to semestre',
-    org: 'Universidad de San Carlos de Guatemala',
-    period: '2015 — Actualmente',
-    icon: 'fas fa-university',
-  },
-  {
-    title: 'Bachiller en Computación',
-    subtitle: '',
-    org: 'Colegio CED - IECA',
-    period: '2012 — 2013',
-    icon: 'fas fa-school',
-  },
-];
 
 // -------------------------------------------------------------
 // Experiencia
 // -------------------------------------------------------------
 export const EXPERIENCIA_INFO = {
-  title: '¡En busca de mi primera oportunidad!',
+  role: 'Desarrolladora Frontend',
+  years: '4 años de experiencia',
   description:
-    'Soy estudiante activa buscando mi primera experiencia profesional en desarrollo web. ¿Hablamos?',
-  ctaText: 'Contáctame',
-  ctaHref: '#contacto',
+    'Desarrolladora Frontend con 4 años de experiencia construyendo aplicaciones web con React con TypeScript. Experiencia en desarrollo de funcionalidades administrativas, dashboards, tablas de datos, formularios y componentes orientados a mejorar la experiencia de usuario. Con conocimientos complementarios de Next.js y diseño UI/UX con Figma.',
+  skillsHighlighted: [
+    { title: 'React & TypeScript', desc: 'Desarrollo de aplicaciones web escalables y modulares.' },
+    { title: 'Dashboards & Tablas de datos', desc: 'Manejo de estados complejos y visualización de datos.' },
+    { title: 'Formularios & UX', desc: 'Validaciones avanzadas y componentes orientados a la mejor experiencia.' },
+    { title: 'Next.js & Figma', desc: 'Conocimientos complementarios y prototipado visual UI/UX.' },
+  ],
 };
 
 // -------------------------------------------------------------
-// Habilidades (Skills)
+// Habilidades Técnicas (con iconos, sin barras de progreso)
 // -------------------------------------------------------------
 export const SKILLS: Record<string, SkillItem[]> = {
-  Tecnologías: [
-    { name: 'HTML5', pct: 40, color: '#F64803' },
-    { name: 'CSS3', pct: 40, color: '#2277FF' },
-    { name: 'JavaScript', pct: 10, color: '#F7DF1E' },
-    { name: 'jQuery', pct: 5, color: '#0769AD' },
-    { name: 'Bootstrap', pct: 20, color: '#5C3D87' },
-    { name: 'Less', pct: 10, color: '#1D365D' },
-    { name: 'Sass', pct: 5, color: '#C66395' },
-    { name: 'Java', pct: 70, color: '#EF0204' },
-    { name: 'C#', pct: 40, color: '#2A0164' },
-    { name: 'SQL', pct: 20, color: '#A41C21' },
-    { name: 'Python', pct: 30, color: '#3775A8' },
-    { name: 'TypeScript', pct: 5, color: '#017ACB' },
+  'Frontend': [
+    { name: 'React', icon: 'fab fa-react', color: '#61DAFB' },
+    { name: 'NextJs', icon: 'fas fa-bolt', color: '#FFFFFF' },
+    { name: 'TypeScript', icon: 'fas fa-code', color: '#3178C6' },
+    { name: 'HTML', icon: 'fab fa-html5', color: '#E34F26' },
+    { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572B6' },
+    { name: 'Tailwind CSS', icon: 'fab fa-css3', color: '#38BDF8' },
   ],
-  Herramientas: [
-    { name: 'Git & GitHub', pct: 80, color: '#E93A2D' },
-    { name: 'Android Studio', pct: 30, color: '#9FC137' },
-    { name: 'Visual Studio', pct: 50, color: '#825CC0' },
-    { name: 'NetBeans', pct: 70, color: '#7997CC' },
+  'Herramientas y programas': [
+    { name: 'Git', icon: 'fab fa-git-alt', color: '#F05032' },
+    { name: 'GitHub', icon: 'fab fa-github', color: '#FFFFFF' },
+    { name: 'Bitbucket', icon: 'fab fa-bitbucket', color: '#0052CC' },
+    { name: 'Jira', icon: 'fab fa-jira', color: '#0052CC' },
+    { name: 'Figma', icon: 'fab fa-figma', color: '#F24E1E' },
+    { name: 'Keycloak', icon: 'fas fa-key', color: '#0088CE' },
+    { name: 'CI/CD', icon: 'fas fa-infinity', color: '#4EAA25' },
   ],
 };
 
 // -------------------------------------------------------------
-// Cursos Adicionales
+// Formación Complementaria (Cursos)
 // -------------------------------------------------------------
 export const CURSOS: CourseItem[] = [
   {
-    title: 'Fundamentos de JavaScript',
-    org: 'Crehana.com',
-    period: 'Mayo 2020',
+    title: 'Tailwind CSS',
+    org: 'Midu.dev',
+    period: 'Mayo 2026',
   },
   {
-    title: 'Git y GitHub: Control de versiones en Proyectos Web',
-    org: 'Crehana.com',
-    period: 'Abril 2020',
+    title: 'Astro y Headless CMS',
+    org: 'Midu.dev',
+    period: 'Abril 2026',
   },
   {
-    title: 'Introducción al Desarrollo Web Front-End: HTML y CSS',
-    org: 'Crehana.com',
-    period: 'Abril 2020',
-  },
-  {
-    title: 'Desarrollo de Aplicaciones Móviles para Android',
-    org: 'INTECAP | CENTRO TICS',
-    period: 'Marzo–Junio 2019',
-  },
-  {
-    title: 'Desarrollo de Aplicaciones Web con ASP.NET',
-    org: 'INTECAP | CENTRO TICS',
-    period: 'Febrero–Septiembre 2014',
+    title: 'Unit Testing con Jest',
+    org: 'Platzi',
+    period: 'Marzo 2023',
   },
 ];
 
 // -------------------------------------------------------------
 // Proyectos (Portafolio)
-// NOTA: Deja las URLs en blanco ("") para que se deshabiliten
-// automáticamente hasta que decidas agregarlas.
 // -------------------------------------------------------------
 export const PROJECTS: Project[] = [
   {
-    id: 'chef',
-    title: 'Chef',
-    image: '/img/projectChef.png',
-    description: 'Sitio web de recetas y gastronomía con diseño moderno y navegación fluida.',
+    id: 'devjobs',
+    title: 'Devjobs',
+    image: '/img/projectDevjobs.webp',
+    description:
+      'Plataforma web para desarrolladores diseñada para explorar, filtrar y postular a vacantes de empleo tecnológico con búsqueda en tiempo real e interfaz moderna.',
     tags: [
-      { name: 'HTML5', color: '#F64803' },
-      { name: 'CSS3', color: '#2277FF' },
-      { name: 'JavaScript', color: '#F7DF1E' },
-      { name: 'Less', color: '#1D365D' },
+      { name: 'React 19', color: '#61DAFB' },
+      { name: 'Tailwind CSS', color: '#06B6D4' },
+      { name: 'TypeScript', color: '#3178C6' },
+      { name: 'React Router', color: '#CA4245' },
     ],
-    github: '', // Agrega aquí la URL de GitHub (ej: "https://github.com/Gramajooo/ProjectJs")
-    demo: '',   // Agrega aquí la URL de la web en vivo (ej: "https://gramajooo.github.io/ProjectJs/")
-  },
-  {
-    id: 'platzivideo',
-    title: 'PlatziVideo',
-    image: '/img/projectPlatziVideo.png',
-    description: 'Plataforma de streaming con diseño inspirado en servicios de video modernos.',
-    tags: [
-      { name: 'HTML5', color: '#F64803' },
-      { name: 'CSS3', color: '#2277FF' },
-      { name: 'Sass', color: '#C66395' },
-    ],
-    github: '', // Agrega aquí la URL de GitHub
-    demo: '',   // Agrega aquí la URL de la web en vivo
-  },
-  {
-    id: 'storefoodmovil',
-    title: 'Store Food Movil',
-    image: '/img/projectFood.png',
-    description: 'Tienda de comida móvil con diseño responsivo y experiencia de usuario optimizada.',
-    tags: [
-      { name: 'HTML5', color: '#F64803' },
-      { name: 'CSS3', color: '#2277FF' },
-      { name: 'Bootstrap', color: '#5C3D87' },
-      { name: 'Sass', color: '#C66395' },
-    ],
-    github: '', // Agrega aquí la URL de GitHub
-    demo: '',   // Agrega aquí la URL de la web en vivo
-  },
-  {
-    id: 'gramajooo-legacy',
-    title: 'Gramajooo',
-    image: '/img/projectJG.png',
-    description: 'Portfolio personal primera versión — base del actual sitio web.',
-    tags: [
-      { name: 'HTML5', color: '#F64803' },
-      { name: 'CSS3', color: '#2277FF' },
-      { name: 'Bootstrap', color: '#5C3D87' },
-      { name: 'JavaScript', color: '#F7DF1E' },
-      { name: 'Less', color: '#1D365D' },
-    ],
-    github: '', // Agrega aquí la URL de GitHub
-    demo: '',   // Agrega aquí la URL de la web en vivo
-  },
-  {
-    id: 'jgdesserts',
-    title: 'JG Desserts',
-    image: '/img/projectDesserts.png',
-    description: 'Landing page de postres con galería visual y paleta de colores pastel.',
-    tags: [
-      { name: 'HTML5', color: '#F64803' },
-      { name: 'CSS3', color: '#2277FF' },
-      { name: 'Bootstrap', color: '#5C3D87' },
-    ],
-    github: '', // Agrega aquí la URL de GitHub
-    demo: '',   // Agrega aquí la URL de la web en vivo
-  },
-  {
-    id: 'error404',
-    title: 'Error 404',
-    image: '/img/projectError.png',
-    description: 'Página de error 404 creativa y animada con experiencia de usuario amigable.',
-    tags: [
-      { name: 'HTML5', color: '#F64803' },
-      { name: 'CSS3', color: '#2277FF' },
-      { name: 'Bootstrap', color: '#5C3D87' },
-    ],
-    github: '', // Agrega aquí la URL de GitHub
-    demo: '',   // Agrega aquí la URL de la web en vivo
+    github: 'https://github.com/Gramajooo/dev-jobs',
+    demo: 'https://webdevjobs.netlify.app/',
   },
 ];
 
@@ -318,10 +205,6 @@ export const PROJECTS: Project[] = [
 // Contacto
 // -------------------------------------------------------------
 export const CONTACTO_INFO = {
-  endpoint: 'https://formspree.io/f/jiimenagramajo@gmail.com',
-  title: '¿Tienes un proyecto?',
-  subtitle: 'Estoy disponible para oportunidades freelance y trabajo en equipo. ¡Envíame un mensaje!',
-  successMessage: '✅ ¡Mensaje enviado con éxito! Te responderé lo antes posible.',
-  errorMessage: '❌ Hubo un error al enviar el mensaje. Por favor intenta de nuevo o escríbeme directamente.',
+  title: '¿Conectamos?',
+  subtitle: 'Puedes encontrarme y ponerte en contacto directamente a través de mis redes y correo electrónico.',
 };
-

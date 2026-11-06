@@ -5,20 +5,37 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-bg: #0a0a0f;
+    --color-text: #ffffff;
+    --color-card: rgba(255, 255, 255, 0.04);
+    --color-card-border: rgba(255, 255, 255, 0.08);
+  }
+
+  html.light {
+    --color-bg: #f8fafc;
+    --color-text: #0f172a;
+    --color-card: rgba(255, 255, 255, 0.95);
+    --color-card-border: rgba(15, 23, 42, 0.08);
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
   }
 
   body {
-    @apply bg-bg text-white antialiased overflow-x-hidden;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    @apply antialiased overflow-x-hidden;
   }
 
   ::-webkit-scrollbar {
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-bg;
+    background: var(--color-bg);
   }
   ::-webkit-scrollbar-thumb {
     @apply bg-primary rounded-full;
@@ -42,8 +59,9 @@
   }
 
   .glass-card {
-    @apply rounded-2xl border border-white/[0.07] backdrop-blur-sm;
-    background: rgba(255,255,255,0.04);
+    @apply rounded-2xl backdrop-blur-sm transition-all duration-300;
+    background: var(--color-card);
+    border: 1px solid var(--color-card-border);
   }
 
   .btn-primary {
@@ -58,7 +76,8 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold border border-white/20 text-white/80 transition-all duration-300 cursor-pointer;
+    @apply inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold transition-all duration-300 cursor-pointer;
+    border: 1px solid var(--color-card-border);
   }
 
   .btn-ghost:hover {
@@ -82,3 +101,152 @@
   }
 }
 
+/* =====================================================
+   LIGHT MODE OVERRIDES
+   ===================================================== */
+html.light {
+  color-scheme: light;
+}
+
+html.light .orb {
+  opacity: 0.05;
+}
+
+/* Headings and primary text in light mode */
+html.light .text-white:not(.btn-primary):not(.nav-cta):not(.tab-btn.bg-primary):not(.btn-primary *) {
+  color: #0f172a !important;
+}
+
+/* Opacity tints for text in light mode */
+html.light [class*="text-white/90"] { color: #1e293b !important; }
+html.light [class*="text-white/80"] { color: #334155 !important; }
+html.light [class*="text-white/70"] { color: #475569 !important; }
+html.light [class*="text-white/60"],
+html.light [class*="text-white/50"] { color: #64748b !important; }
+html.light [class*="text-white/40"] { color: #94a3b8 !important; }
+html.light [class*="text-white/30"],
+html.light [class*="text-white/20"] { color: #cbd5e1 !important; }
+
+/* Subtle borders in light mode */
+html.light [class*="border-white"] {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Card backgrounds in light mode */
+html.light .bg-\[\#12121a\] {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-bg {
+  background-color: #f8fafc !important;
+}
+
+html.light .border-bg {
+  border-color: #f8fafc !important;
+}
+
+/* Inputs in light mode */
+html.light .form-input {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .form-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light .form-input:focus {
+  border-color: #e84393 !important;
+  box-shadow: 0 0 0 2px rgba(232, 67, 147, 0.15) !important;
+}
+
+/* Navbar in light mode */
+html.light #navbar {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light #navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1px solid rgba(232, 67, 147, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .brand-name {
+  color: #0f172a !important;
+}
+html.light .brand-name:hover {
+  color: #e84393 !important;
+}
+
+html.light .nav-link {
+  color: #334155 !important;
+}
+html.light .nav-link:hover {
+  color: #0f172a !important;
+}
+html.light .nav-link.active {
+  color: #e84393 !important;
+}
+
+html.light #navToggle {
+  color: #0f172a !important;
+}
+html.light #navToggle:hover {
+  color: #e84393 !important;
+}
+
+html.light .theme-toggle {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25) !important;
+}
+
+html.light #mobileNav {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .mobile-link {
+  color: #334155 !important;
+}
+html.light .mobile-link:hover {
+  color: #e84393 !important;
+}
+
+/* Floating bubbles in light mode */
+html.light .bubble-chip {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+}
+html.light .bubble-chip:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+}
+html.light .bubble-chip .bubble-text,
+html.light .bubble-chip span {
+  color: #1e293b !important;
+}
+
+/* Sun / Moon icons visibility & Dark mode toggle styling */
+html.dark .moon-icon {
+  display: block;
+}
+html.dark .sun-icon {
+  display: none;
+}
+html.dark .theme-toggle {
+  background: rgba(124, 58, 237, 0.2) !important;
+  border: 1px solid rgba(124, 58, 237, 0.45) !important;
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.3) !important;
+}
+
+html.light .moon-icon {
+  display: none;
+}
+html.light .sun-icon {
+  display: block;
+}

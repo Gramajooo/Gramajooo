@@ -1,7 +1,6 @@
 ---
 import {
   FORMACION_TABS,
-  EDUCACION,
   EXPERIENCIA_INFO,
   SKILLS,
   CURSOS,
@@ -12,9 +11,9 @@ import {
   <div class="max-w-6xl mx-auto px-6">
     <!-- Header -->
     <div class="text-center mb-14" data-reveal>
-      <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Mi trayectoria</p>
+      <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Mi perfil profesional</p>
       <h2 class="section-title text-white mx-auto after:mx-auto">
-        Forma<span class="text-gradient">ción</span>
+        Experiencia &amp; <span class="text-gradient">Skills</span>
       </h2>
     </div>
 
@@ -36,72 +35,70 @@ import {
       ))}
     </div>
 
-    <!-- Tab panels -->
-    <div class="glass-card border-white/[0.06] p-8 rounded-3xl min-h-[320px]">
+    <!-- Tab panels container -->
+    <div class="glass-card border-white/[0.06] p-6 sm:p-10 rounded-3xl min-h-[360px]">
 
-      <!-- Educación -->
-      <div id="tab-educacion" class="tab-panel space-y-6">
-        {EDUCACION.map(e => (
-          <div class="flex gap-5 group">
-            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-              <i class={e.icon}></i>
+      <!-- Experiencia (Tab 1 - Activo por defecto) -->
+      <div id="tab-experiencia" class="tab-panel space-y-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl flex-shrink-0">
+              <i class="fas fa-laptop-code"></i>
             </div>
             <div>
-              <h3 class="font-semibold text-white text-lg leading-tight">
-                {e.title}
-                {e.subtitle && (
-                  <span class="ml-2 text-xs text-primary font-normal bg-primary/10 px-2.5 py-0.5 rounded-full border border-primary/20">
-                    {e.subtitle}
-                  </span>
-                )}
+              <h3 class="text-2xl font-bold text-white leading-tight">
+                {EXPERIENCIA_INFO.role}
               </h3>
-              <p class="text-white/60 text-sm mt-0.5">{e.org}</p>
-              <p class="text-white/40 text-xs mt-1 flex items-center gap-1.5">
-                <i class="fas fa-calendar-alt text-primary/60 text-[10px]"></i>
-                {e.period}
-              </p>
+              <p class="text-white/40 text-sm mt-0.5">Especializada en React &amp; TypeScript</p>
             </div>
           </div>
-        ))}
-      </div>
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/25 text-xs font-semibold w-fit">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            {EXPERIENCIA_INFO.years}
+          </span>
+        </div>
 
-      <!-- Experiencia -->
-      <div id="tab-experiencia" class="tab-panel hidden">
-        <div class="flex flex-col items-center justify-center py-16 text-center">
-          <div class="w-20 h-20 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
-            <i class="fas fa-rocket text-primary text-2xl animate-float"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-2">{EXPERIENCIA_INFO.title}</h3>
-          <p class="text-white/50 text-sm max-w-sm">
-            {EXPERIENCIA_INFO.description}
-          </p>
-          <a href={EXPERIENCIA_INFO.ctaHref} class="btn-primary mt-6 text-sm">
-            <i class="fas fa-envelope"></i> {EXPERIENCIA_INFO.ctaText}
-          </a>
+        <!-- Descripción principal -->
+        <p class="text-white/80 text-base sm:text-lg leading-relaxed">
+          {EXPERIENCIA_INFO.description}
+        </p>
+
+        <!-- Highlights / Competencias clave -->
+        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+          {EXPERIENCIA_INFO.skillsHighlighted.map(item => (
+            <div class="glass-card p-5 rounded-2xl border-white/[0.06] hover:border-primary/30 transition-all duration-300">
+              <div class="flex items-center gap-2.5 text-primary text-sm font-semibold mb-1.5">
+                <i class="fas fa-check-circle text-xs"></i>
+                <span class="text-white font-medium">{item.title}</span>
+              </div>
+              <p class="text-white/50 text-xs sm:text-sm leading-relaxed pl-5">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
-      <!-- Skills -->
-      <div id="tab-skills" class="tab-panel hidden">
+      <!-- Skills (Habilidades Técnicas - Sin barras de progreso) -->
+      <div id="tab-skills" class="tab-panel hidden space-y-10">
         {Object.entries(SKILLS).map(([cat, items]) => (
-          <div class="mb-8 last:mb-0">
-            <h3 class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-5 flex items-center gap-2">
-              <span class="block w-5 h-0.5 bg-primary/60 rounded"></span>
+          <div>
+            <h3 class="text-xs font-bold text-white/50 uppercase tracking-widest mb-6 flex items-center gap-2">
+              <span class="block w-6 h-0.5 bg-primary rounded"></span>
               {cat}
             </h3>
-            <div class="grid sm:grid-cols-2 gap-x-10 gap-y-4">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {items.map(s => (
-                <div>
-                  <div class="flex justify-between mb-1.5">
-                    <span class="text-sm font-medium text-white/80">{s.name}</span>
-                    <span class="text-xs font-bold" style={`color:${s.color}`}>{s.pct}%</span>
+                <div class="skill-card group glass-card p-4 rounded-2xl border-white/[0.07] hover:border-primary/40 flex flex-col items-center justify-center text-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow">
+                  <div
+                    class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110"
+                    style={`color: ${s.color}; background: ${s.color}15; border: 1px solid ${s.color}33`}
+                  >
+                    <i class={s.icon}></i>
                   </div>
-                  <div class="h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
-                    <div
-                      class="h-full rounded-full skill-bar"
-                      style={`width:${s.pct}%; background:${s.color}`}
-                    ></div>
-                  </div>
+                  <span class="text-sm font-semibold text-white/90 group-hover:text-white transition-colors">
+                    {s.name}
+                  </span>
                 </div>
               ))}
             </div>
@@ -109,28 +106,38 @@ import {
         ))}
       </div>
 
-      <!-- Cursos -->
+      <!-- Cursos (Formación Complementaria) -->
       <div id="tab-cursos" class="tab-panel hidden space-y-4">
-        {CURSOS.map((c, i) => (
-          <div class="flex gap-4 group p-4 rounded-2xl hover:bg-white/[0.03] transition-colors duration-200">
-            <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary text-sm font-bold group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-              {String(i + 1).padStart(2, '0')}
+        <h3 class="text-xs font-bold text-white/50 uppercase tracking-widest mb-6 flex items-center gap-2">
+          <span class="block w-6 h-0.5 bg-primary rounded"></span>
+          Formación Complementaria
+        </h3>
+        <div class="grid gap-4">
+          {CURSOS.map((c, i) => (
+            <div class="flex items-center gap-4 sm:gap-6 p-5 rounded-2xl glass-card border-white/[0.06] hover:border-primary/30 transition-all duration-300 group">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                0{i + 1}
+              </div>
+              <div class="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4">
+                <div>
+                  <h4 class="font-semibold text-white text-base leading-snug group-hover:text-primary transition-colors">
+                    {c.title}
+                  </h4>
+                  <p class="text-white/40 text-xs sm:text-sm mt-0.5">{c.org}</p>
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-xs text-white/50 bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.06] w-fit">
+                  <i class="fas fa-calendar-alt text-primary/70 text-[10px]"></i>
+                  {c.period}
+                </span>
+              </div>
             </div>
-            <div>
-              <h3 class="font-semibold text-white/90 text-sm leading-snug">{c.title}</h3>
-              <p class="text-white/40 text-xs mt-0.5">{c.org} · {c.period}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
     </div>
   </div>
 </section>
-
-<style>
-  .skill-bar { transition: width 0.8s ease; }
-</style>
 
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('.tab-btn');

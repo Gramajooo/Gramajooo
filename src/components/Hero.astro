@@ -43,15 +43,17 @@ import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
 
       <!-- Socials -->
       <div class="flex gap-3" data-reveal data-reveal-delay="500">
-        <a href={SOCIAL_LINKS.github.url} target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
-          <i class={SOCIAL_LINKS.github.icon}></i>
-        </a>
-        <a href={SOCIAL_LINKS.linkedin.url} target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
-          <i class={SOCIAL_LINKS.linkedin.icon}></i>
-        </a>
-        <a href={SOCIAL_LINKS.twitter.url} target="_blank" rel="noopener" aria-label="Twitter" class="social-btn">
-          <i class={SOCIAL_LINKS.twitter.icon}></i>
-        </a>
+        {Object.values(SOCIAL_LINKS).map(social => (
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noopener"
+            aria-label={social.name}
+            class="social-btn"
+          >
+            <i class={social.icon}></i>
+          </a>
+        ))}
       </div>
     </div>
 
@@ -78,25 +80,27 @@ import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
           class="w-full h-full object-cover rounded-full border-4 border-bg shadow-card"
         />
 
+        <!-- Floating framework bubbles (Globitos tipo botón sutil con glassmorphism) -->
+        <div class="bubble-chip absolute -top-3 -left-4 sm:-left-8 animate-float border-[#61DAFB]/25 hover:border-[#61DAFB]/50" style="animation-delay: 0s">
+          <i class="fab fa-react text-[#61DAFB] text-sm"></i>
+          <span class="text-xs font-medium text-white/90 bubble-text">React</span>
+        </div>
+
+        <div class="bubble-chip absolute top-7 -right-4 sm:-right-8 lg:-right-10 animate-float border-[#3178C6]/25 hover:border-[#3178C6]/50" style="animation-delay: 1.2s">
+          <i class="fas fa-code text-[#3178C6] text-xs"></i>
+          <span class="text-xs font-medium text-white/90 bubble-text">TypeScript</span>
+        </div>
+
+        <div class="bubble-chip absolute bottom-8 -left-5 sm:-left-9 animate-float border-[#38BDF8]/25 hover:border-[#38BDF8]/50" style="animation-delay: 2.2s">
+          <i class="fab fa-css3-alt text-[#38BDF8] text-sm"></i>
+          <span class="text-xs font-medium text-white/90 bubble-text">Tailwind</span>
+        </div>
+
         <!-- Badge -->
-        <div class="absolute -bottom-2 -right-6 glass-card flex items-center gap-2 px-4 py-2.5 rounded-full border-primary/30 shadow-card animate-float whitespace-nowrap z-20">
+        <div class="absolute -bottom-2 -right-4 sm:-right-8 glass-card flex items-center gap-2 px-4 py-2.5 rounded-full border-primary/30 shadow-card animate-float whitespace-nowrap z-20" style="animation-delay: 1.6s">
           <i class="fas fa-laptop-code text-primary"></i>
           <span class="text-sm font-semibold text-primary">{PERSONAL_INFO.statusBadge}</span>
         </div>
-      </div>
-
-      <!-- Floating skill chips -->
-      <div class="skill-chip absolute top-6 -right-4 lg:right-0 animate-float" style="animation-delay:0.5s">
-        <i class="fab fa-js-square text-yellow-400"></i>
-        <span>JavaScript</span>
-      </div>
-      <div class="skill-chip absolute top-1/2 -right-10 lg:right-4 animate-float" style="animation-delay:1s">
-        <i class="fab fa-java text-red-500"></i>
-        <span>Java</span>
-      </div>
-      <div class="skill-chip absolute bottom-10 -right-6 lg:right-2 animate-float" style="animation-delay:1.5s">
-        <i class="fab fa-css3-alt text-blue-400"></i>
-        <span>CSS3</span>
       </div>
     </div>
   </div>
@@ -121,11 +125,16 @@ import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
     box-shadow: 0 4px 16px rgba(232,67,147,0.25);
   }
 
-  .skill-chip {
-    @apply hidden lg:flex items-center gap-1.5 border border-white/10 px-3 py-2 rounded-full text-xs font-semibold text-white;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(4px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  .bubble-chip {
+    @apply flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 z-20 whitespace-nowrap cursor-default border;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   }
-  .skill-chip i { @apply text-base; }
+  .bubble-chip:hover {
+    @apply -translate-y-0.5;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
 </style>

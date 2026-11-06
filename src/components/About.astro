@@ -45,14 +45,8 @@ import { PERSONAL_INFO, ABOUT_STATS, ABOUT_DETAILS } from '../constants';
       <h2 class="section-title text-white mb-6">
         About <span class="text-gradient">Me</span>
       </h2>
-      <p class="text-white/70 text-lg leading-relaxed mb-5">
-        Hola 👋 Mi nombre es <strong class="text-white font-semibold">{PERSONAL_INFO.name}</strong>, soy estudiante de 
-        Ingeniería en Ciencias y Sistemas en la <span class="text-white font-medium">{PERSONAL_INFO.university}</span>.
-      </p>
-      <p class="text-white/60 leading-relaxed mb-8">
-        Me apasiona el diseño y el desarrollo web. Disfruto construir interfaces atractivas 
-        y funcionales, siempre buscando aprender nuevas tecnologías y mejores prácticas 
-        para crecer como desarrolladora.
+      <p class="text-white/80 text-lg leading-relaxed mb-5">
+        Hola 👋 Mi nombre es <strong class="text-white font-semibold">{PERSONAL_INFO.name}</strong>, {PERSONAL_INFO.bioAbout}
       </p>
 
       <!-- Info grid -->
@@ -67,8 +61,8 @@ import { PERSONAL_INFO, ABOUT_STATS, ABOUT_DETAILS } from '../constants';
       </div>
 
       <a href="#contacto" class="btn-primary w-fit">
-        <i class="fas fa-paper-plane"></i>
-        Hablemos
+        <i class="fas fa-envelope"></i>
+        Contacto
       </a>
     </div>
   </div>
