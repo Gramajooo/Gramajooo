@@ -1,0 +1,43 @@
+---
+import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
+---
+
+<footer class="relative z-10 border-t border-white/[0.06] py-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-5">
+    <!-- Logo -->
+    <a href="#inicio" class="flex items-baseline gap-0.5">
+      <span class="font-serif text-xl font-black text-white/70 hover:text-white transition-colors">
+        {PERSONAL_INFO.brandName}
+      </span>
+      <span class="text-primary text-2xl leading-none font-black">.</span>
+    </a>
+
+    <!-- Copyright -->
+    <p class="text-white/40 text-sm text-center">
+      © {new Date().getFullYear()} {PERSONAL_INFO.name} · Todos los derechos reservados
+    </p>
+
+    <!-- Socials -->
+    <div class="flex gap-3">
+      <a href={SOCIAL_LINKS.github.url} target="_blank" rel="noopener" aria-label="GitHub" class="footer-social">
+        <i class={SOCIAL_LINKS.github.icon}></i>
+      </a>
+      <a href={SOCIAL_LINKS.linkedin.url} target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social">
+        <i class={SOCIAL_LINKS.linkedin.icon}></i>
+      </a>
+      <a href={SOCIAL_LINKS.twitter.url} target="_blank" rel="noopener" aria-label="Twitter" class="footer-social">
+        <i class={SOCIAL_LINKS.twitter.icon}></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-social {
+    @apply w-9 h-9 flex items-center justify-center rounded-full border border-white/[0.08] text-white/50 text-sm transition-all duration-300;
+  }
+  .footer-social:hover {
+    @apply border-primary text-primary;
+    box-shadow: 0 0 12px rgba(232, 67, 147, 0.25);
+  }
+</style>

@@ -1,0 +1,177 @@
+---
+import { PERSONAL_INFO, NAV_LINKS } from '../constants';
+---
+
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between py-4 transition-all duration-300" id="navbarContainer">
+    <!-- Logo -->
+    <a href="#inicio" class="flex items-baseline gap-0.5 group">
+      <span class="font-serif text-2xl font-black tracking-tight text-white group-hover:opacity-80 transition-opacity">
+        {PERSONAL_INFO.brandName}
+      </span>
+      <span class="text-primary text-3xl leading-none font-black">.</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav id="desktopNav" class="hidden md:flex items-center gap-8">
+      {NAV_LINKS.map(link => (
+        <a
+          href={link.href}
+          class={link.isCta ? 'nav-cta' : 'nav-link'}
+        >
+          {link.name}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button
+      id="navToggle"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      class="md:hidden flex flex-col justify-center gap-1.5 p-2 rounded-lg text-white hover:text-primary transition-colors focus:outline-none"
+    >
+      <span class="toggle-bar block w-6 h-0.5 bg-current rounded transition-all duration-300"></span>
+      <span class="toggle-bar block w-6 h-0.5 bg-current rounded transition-all duration-300"></span>
+      <span class="toggle-bar block w-6 h-0.5 bg-current rounded transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- Mobile nav dropdown -->
+  <div
+    id="mobileNav"
+    class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-[#0a0a0f]/98 backdrop-blur-2xl border-t border-white/[0.08]"
+  >
+    <nav class="flex flex-col px-6 py-4 gap-1">
+      {NAV_LINKS.map(link => (
+        <a
+          href={link.href}
+          class={link.isCta ? 'mobile-link text-primary font-semibold border-t border-white/10 pt-3 mt-2' : 'mobile-link'}
+        >
+          {link.name}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Header scroll state */
+  #navbar {
+    background-color: transparent;
+  }
+
+  #navbar.scrolled {
+    background-color: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-white/70 relative transition-colors duration-300 hover:text-white;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded transition-all duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  .nav-link.active {
+    @apply text-primary font-semibold;
+  }
+
+  .nav-cta {
+    @apply text-sm font-semibold text-white px-5 py-2 rounded-full transition-all duration-300;
+    background: linear-gradient(135deg, #e84393, #7c3aed);
+    box-shadow: 0 4px 16px rgba(232, 67, 147, 0.3);
+  }
+  .nav-cta:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 6px 24px rgba(232, 67, 147, 0.45);
+  }
+
+  .mobile-link {
+    @apply text-base font-medium text-white/80 py-3 hover:text-white transition-colors duration-200;
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const navToggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const bars = navToggle?.querySelectorAll<HTMLElement>('.toggle-bar');
+
+  // Control de scroll limpio
+  const handleScroll = () => {
+    if (!navbar) return;
+    if (window.scrollY > 20) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Chequeo inicial
+
+  // Menú móvil toggle
+  let isOpen = false;
+  navToggle?.addEventListener('click', () => {
+    if (!mobileNav || !bars) return;
+    isOpen = !isOpen;
+    mobileNav.style.maxHeight = isOpen ? `${mobileNav.scrollHeight}px` : '0';
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+
+    if (isOpen) {
+      bars[0].style.transform = 'translateY(8px) rotate(45deg)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+    } else {
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '1';
+      bars[2].style.transform = '';
+    }
+  });
+
+  // Cerrar menú móvil al hacer click en un enlace
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!mobileNav || !bars || !navToggle) return;
+      isOpen = false;
+      mobileNav.style.maxHeight = '0';
+      navToggle.setAttribute('aria-expanded', 'false');
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '1';
+      bars[2].style.transform = '';
+    });
+  });
+
+  // Highlight del enlace activo según el scroll
+  const sections = document.querySelectorAll<HTMLElement>('section[id]');
+  const desktopLinks = document.querySelectorAll<HTMLAnchorElement>('#desktopNav .nav-link');
+
+  const updateActiveLink = () => {
+    let currentId = '';
+    const scrollPos = window.scrollY + 120;
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentId = section.id;
+      }
+    });
+
+    desktopLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === `#${currentId}`);
+    });
+  };
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
+</script>

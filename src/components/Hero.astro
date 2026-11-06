@@ -1,0 +1,131 @@
+---
+import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
+---
+
+<section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center py-16">
+
+    <!-- Left content -->
+    <div data-reveal="left">
+      <!-- Greeting -->
+      <div class="flex items-center gap-3 mb-5" data-reveal data-reveal-delay="100">
+        <span class="block w-10 h-0.5 bg-primary rounded"></span>
+        <span class="text-primary text-sm font-semibold tracking-widest uppercase">Hola, soy</span>
+      </div>
+
+      <!-- Name -->
+      <h1 class="font-serif font-black leading-[0.95] mb-6" style="font-size: clamp(3.2rem,7vw,5.5rem)">
+        {PERSONAL_INFO.firstName}<br />
+        <span class="text-gradient">{PERSONAL_INFO.lastName}</span>
+      </h1>
+
+      <!-- Role pill -->
+      <div class="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6" data-reveal data-reveal-delay="200">
+        <i class="fas fa-code text-primary text-sm"></i>
+        <span class="text-white/70 text-sm font-medium">{PERSONAL_INFO.role}</span>
+      </div>
+
+      <!-- Bio -->
+      <p class="text-white/60 text-lg leading-relaxed max-w-md mb-8" data-reveal data-reveal-delay="300">
+        {PERSONAL_INFO.bioShort}
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 mb-10" data-reveal data-reveal-delay="400">
+        <a href="#portafolio" class="btn-primary group">
+          Ver Proyectos
+          <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+        </a>
+        <a href="#contacto" class="btn-ghost">
+          Contactarme
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="flex gap-3" data-reveal data-reveal-delay="500">
+        <a href={SOCIAL_LINKS.github.url} target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
+          <i class={SOCIAL_LINKS.github.icon}></i>
+        </a>
+        <a href={SOCIAL_LINKS.linkedin.url} target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
+          <i class={SOCIAL_LINKS.linkedin.icon}></i>
+        </a>
+        <a href={SOCIAL_LINKS.twitter.url} target="_blank" rel="noopener" aria-label="Twitter" class="social-btn">
+          <i class={SOCIAL_LINKS.twitter.icon}></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right visual -->
+    <div class="flex justify-center relative" data-reveal="right">
+      <!-- Spinning rings -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-80 h-80 rounded-full border border-primary/20 animate-spin-slow
+                    [background:conic-gradient(from_0deg,transparent_0%,#e84393_15%,transparent_30%)]
+                    [-webkit-mask:radial-gradient(farthest-side,transparent_calc(100%-2px),white_calc(100%-2px))]
+                    [mask:radial-gradient(farthest-side,transparent_calc(100%-2px),white_calc(100%-2px))]"></div>
+        <div class="absolute w-96 h-96 rounded-full border border-secondary/15
+                    animate-[spin_20s_linear_infinite_reverse]
+                    [background:conic-gradient(from_90deg,transparent_0%,#7c3aed_15%,transparent_30%)]
+                    [-webkit-mask:radial-gradient(farthest-side,transparent_calc(100%-2px),white_calc(100%-2px))]
+                    [mask:radial-gradient(farthest-side,transparent_calc(100%-2px),white_calc(100%-2px))]"></div>
+      </div>
+
+      <!-- Photo -->
+      <div class="relative z-10 w-64 h-64 lg:w-80 lg:h-80">
+        <img
+          src="/img/perfil.jpeg"
+          alt={PERSONAL_INFO.name}
+          class="w-full h-full object-cover rounded-full border-4 border-bg shadow-card"
+        />
+
+        <!-- Badge -->
+        <div class="absolute -bottom-2 -right-6 glass-card flex items-center gap-2 px-4 py-2.5 rounded-full border-primary/30 shadow-card animate-float whitespace-nowrap z-20">
+          <i class="fas fa-laptop-code text-primary"></i>
+          <span class="text-sm font-semibold text-primary">{PERSONAL_INFO.statusBadge}</span>
+        </div>
+      </div>
+
+      <!-- Floating skill chips -->
+      <div class="skill-chip absolute top-6 -right-4 lg:right-0 animate-float" style="animation-delay:0.5s">
+        <i class="fab fa-js-square text-yellow-400"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-chip absolute top-1/2 -right-10 lg:right-4 animate-float" style="animation-delay:1s">
+        <i class="fab fa-java text-red-500"></i>
+        <span>Java</span>
+      </div>
+      <div class="skill-chip absolute bottom-10 -right-6 lg:right-2 animate-float" style="animation-delay:1.5s">
+        <i class="fab fa-css3-alt text-blue-400"></i>
+        <span>CSS3</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#about" aria-label="Scroll" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group">
+    <span class="text-xs text-white/40 tracking-widest uppercase font-medium group-hover:text-white/80 transition-colors">Scroll</span>
+    <div class="w-7 h-11 rounded-full border border-white/20 flex items-start justify-center pt-2 group-hover:border-primary/50 transition-colors">
+      <div class="w-1.5 h-1.5 rounded-full bg-primary animate-scroll-dot"></div>
+    </div>
+  </a>
+</section>
+
+<style>
+  .social-btn {
+    @apply w-11 h-11 flex items-center justify-center rounded-full border border-white/10 text-white/50 text-base transition-all duration-300;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+  }
+  .social-btn:hover {
+    @apply border-primary text-primary -translate-y-1;
+    box-shadow: 0 4px 16px rgba(232,67,147,0.25);
+  }
+
+  .skill-chip {
+    @apply hidden lg:flex items-center gap-1.5 border border-white/10 px-3 py-2 rounded-full text-xs font-semibold text-white;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .skill-chip i { @apply text-base; }
+</style>

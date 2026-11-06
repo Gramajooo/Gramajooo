@@ -1,0 +1,156 @@
+---
+import {
+  FORMACION_TABS,
+  EDUCACION,
+  EXPERIENCIA_INFO,
+  SKILLS,
+  CURSOS,
+} from '../constants';
+---
+
+<section id="formacion" class="py-24 relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-14" data-reveal>
+      <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Mi trayectoria</p>
+      <h2 class="section-title text-white mx-auto after:mx-auto">
+        Forma<span class="text-gradient">ción</span>
+      </h2>
+    </div>
+
+    <!-- Tab buttons -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10" data-reveal>
+      {FORMACION_TABS.map((t, i) => (
+        <button
+          data-tab={t.id}
+          class:list={[
+            'tab-btn flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300',
+            i === 0
+              ? 'bg-primary text-white shadow-glow'
+              : 'glass-card text-white/50 hover:text-white border-white/[0.07]',
+          ]}
+        >
+          <i class={t.icon}></i>
+          {t.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Tab panels -->
+    <div class="glass-card border-white/[0.06] p-8 rounded-3xl min-h-[320px]">
+
+      <!-- Educación -->
+      <div id="tab-educacion" class="tab-panel space-y-6">
+        {EDUCACION.map(e => (
+          <div class="flex gap-5 group">
+            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <i class={e.icon}></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white text-lg leading-tight">
+                {e.title}
+                {e.subtitle && (
+                  <span class="ml-2 text-xs text-primary font-normal bg-primary/10 px-2.5 py-0.5 rounded-full border border-primary/20">
+                    {e.subtitle}
+                  </span>
+                )}
+              </h3>
+              <p class="text-white/60 text-sm mt-0.5">{e.org}</p>
+              <p class="text-white/40 text-xs mt-1 flex items-center gap-1.5">
+                <i class="fas fa-calendar-alt text-primary/60 text-[10px]"></i>
+                {e.period}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Experiencia -->
+      <div id="tab-experiencia" class="tab-panel hidden">
+        <div class="flex flex-col items-center justify-center py-16 text-center">
+          <div class="w-20 h-20 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+            <i class="fas fa-rocket text-primary text-2xl animate-float"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">{EXPERIENCIA_INFO.title}</h3>
+          <p class="text-white/50 text-sm max-w-sm">
+            {EXPERIENCIA_INFO.description}
+          </p>
+          <a href={EXPERIENCIA_INFO.ctaHref} class="btn-primary mt-6 text-sm">
+            <i class="fas fa-envelope"></i> {EXPERIENCIA_INFO.ctaText}
+          </a>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div id="tab-skills" class="tab-panel hidden">
+        {Object.entries(SKILLS).map(([cat, items]) => (
+          <div class="mb-8 last:mb-0">
+            <h3 class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-5 flex items-center gap-2">
+              <span class="block w-5 h-0.5 bg-primary/60 rounded"></span>
+              {cat}
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-x-10 gap-y-4">
+              {items.map(s => (
+                <div>
+                  <div class="flex justify-between mb-1.5">
+                    <span class="text-sm font-medium text-white/80">{s.name}</span>
+                    <span class="text-xs font-bold" style={`color:${s.color}`}>{s.pct}%</span>
+                  </div>
+                  <div class="h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                    <div
+                      class="h-full rounded-full skill-bar"
+                      style={`width:${s.pct}%; background:${s.color}`}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Cursos -->
+      <div id="tab-cursos" class="tab-panel hidden space-y-4">
+        {CURSOS.map((c, i) => (
+          <div class="flex gap-4 group p-4 rounded-2xl hover:bg-white/[0.03] transition-colors duration-200">
+            <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary text-sm font-bold group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <div>
+              <h3 class="font-semibold text-white/90 text-sm leading-snug">{c.title}</h3>
+              <p class="text-white/40 text-xs mt-0.5">{c.org} · {c.period}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-bar { transition: width 0.8s ease; }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+  const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab!;
+
+      buttons.forEach((b) => {
+        const active = b.dataset.tab === target;
+        b.classList.toggle('bg-primary', active);
+        b.classList.toggle('text-white', active);
+        b.classList.toggle('shadow-glow', active);
+        b.classList.toggle('text-white/50', !active);
+      });
+
+      panels.forEach((p) => {
+        p.classList.toggle('hidden', p.id !== `tab-${target}`);
+      });
+    });
+  });
+</script>
