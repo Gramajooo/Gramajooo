@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.eslintcache
+.vscode
+
+# Astro production and cache
+dist/
+.astro/
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
